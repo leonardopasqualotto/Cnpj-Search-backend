@@ -23,6 +23,6 @@ import lombok.Setter;
 public class Motivo implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String codigo;
+    private Integer codigo;
     private String descricao;
 }

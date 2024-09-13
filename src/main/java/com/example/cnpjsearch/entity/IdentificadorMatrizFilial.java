@@ -1,6 +1,7 @@
 package com.example.cnpjsearch.entity;
 
 import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,16 +11,17 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Table(name= "cnae") 
-@Entity(name="cnae") 
+@Table(name= "identificado_matriz_filial")
+@Entity(name="identificado_matriz_filial")
 @Getter
-@NoArgsConstructor 
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of="codigo")
+public class IdentificadorMatrizFilial implements Serializable {
 
-public class Cnae implements Serializable{
-    
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     private String descricao;

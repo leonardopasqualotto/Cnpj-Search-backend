@@ -33,6 +33,10 @@ public class Empresa {
     private NaturezaJuridica natureza_juridica;
 
     @ManyToOne 
+    @JoinColumn(name = "porte_empresa", referencedColumnName = "codigo")
+    private PorteEmpresa porte_empresa;
+
+    @ManyToOne 
     @JoinColumn(name = "qualificacao_responsavel", referencedColumnName = "codigo")
     private QualificacaoResponsavel qualificacao_responsavel;
 
@@ -41,7 +45,6 @@ public class Empresa {
     private List<Socio> socios;
 
     private String razao_social;
-    private String porte_empresa;
     private String ente_federativo_responsavel;
     private double capital_social;
 }

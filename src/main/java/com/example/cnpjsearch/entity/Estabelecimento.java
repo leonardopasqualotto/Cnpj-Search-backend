@@ -1,14 +1,10 @@
 package com.example.cnpjsearch.entity;
-
-import java.util.List;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -26,9 +22,7 @@ import lombok.Setter;
 public class Estabelecimento  {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String cnpj;
-    private String identificador_matriz_filial;
     private String nome_fantasia;
-    private String situacao_cadastral;
     private String data_situacao_cadastral;
     private String nome_cidade_exterior;
     private String data_inicio_atividade;
@@ -48,6 +42,15 @@ public class Estabelecimento  {
     private String correio_eletronico;
     private String situacao_especial;
     private String data_situacao_especial;
+    private String cnae_fiscal_secundaria;
+
+    @ManyToOne 
+    @JoinColumn(name = "identificador_matriz_filial", referencedColumnName = "codigo")
+    private IdentificadorMatrizFilial identificador_matriz_filial;
+    
+    @ManyToOne 
+    @JoinColumn(name = "situacao_cadastral", referencedColumnName = "codigo")
+    private SituacaoCadastral situacao_cadastral;
 
     @ManyToOne 
     @JoinColumn(name = "municipio", referencedColumnName = "codigo")
@@ -57,9 +60,9 @@ public class Estabelecimento  {
     @JoinColumn(name = "cnae_fiscal_principal", referencedColumnName = "codigo")
     private Cnae cnae_fiscal_principal;
 
-    @OneToMany (fetch = FetchType.EAGER)
-    @JoinColumn(name = "cnpj",referencedColumnName = "cnpj")
-    private List<EstabelecimentoCnaeRelacionamento> estabelecimento_cnae_relacionamento;
+    // @OneToMany (fetch = FetchType.EAGER)
+    // @JoinColumn(name = "cnpj",referencedColumnName = "cnpj")
+    // private List<EstabelecimentoCnaeRelacionamento> estabelecimento_cnae_relacionamento;
 
     @ManyToOne 
     @JoinColumn(name = "pais", referencedColumnName = "codigo")
