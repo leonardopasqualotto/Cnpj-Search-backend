@@ -83,8 +83,8 @@ Here is the list of routes of the API, and what are their expected request bodie
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | <kbd>GET /cnpj/{cnpj}</kbd>     | retrieves cnpj info see [response details](#get-auth-detail)
-| <kbd>POST /auth/login</kbd>     | authenticate user see [request details](#post-auth-detail)
-<kbd>POST /auth/register</kbd>     | create and save new user see [request details](#post-auth-detail)
+| <kbd>POST /auth/login</kbd>     | authenticate user see [request details](#post_login-auth-detail)
+<kbd>POST /auth/register</kbd>     | create and save new user see [request details](#post_register-auth-detail)
 
 
 <h3 id="get-auth-detail">GET /cnpj/{cnpj}</h3>
@@ -92,10 +92,10 @@ Here is the list of routes of the API, and what are their expected request bodie
 **REQUEST**
 
 <h4>Header</h4>
-
+<h5>Authorization: Bearer</h5>
 
 ```json
-Authorization: Bearer {
+ {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdX"
   }
 ```
@@ -243,7 +243,7 @@ Authorization: Bearer {
 }
 ```
 
-<h3 id="post-auth-detail">POST /auth/login</h3>
+<h3 id="post_login-auth-detail">POST /auth/login</h3>
 
 **REQUEST**
 
@@ -264,7 +264,7 @@ Authorization: Bearer {
 }
 ```
 
-<h3 id="post-auth-detail">POST /auth/register</h3>
+<h3 id="post_register-auth-detail">POST /auth/register</h3>
 
 **REQUEST**
 ```json
