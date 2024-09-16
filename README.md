@@ -23,7 +23,7 @@ RESTful API developed in **Java**  using **Spring Boot** framework and **Postgre
 API uses Spring Security with JWT for authentication and authorization control. 
 
 
-The database is generated from a ETL process available in [this repository](https://github.com/leonardopasqualotto/Receita_Federal_do_Brasil_-_Dados_Publicos_CNPJ/blob/master/README.md).
+The database is generated from a ETL process available in [this repository](https://github.com/leonardopasqualotto/Receita_Federal_do_Brasil_-_Dados_Publicos_CNPJ).
 
 
 
