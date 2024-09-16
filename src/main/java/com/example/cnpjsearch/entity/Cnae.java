@@ -21,6 +21,6 @@ import lombok.NoArgsConstructor;
 public class Cnae implements Serializable{
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codigo;
+    private String codigo;
     private String descricao;
 }
